@@ -37,12 +37,12 @@
     });
 
     // Root dir
-    Flight::route('/', function(){
-        Flight::redirect('/_builds');
-    });
+    //Flight::route('/', function(){
+        //Flight::redirect('/_builds');
+    //});
 
     // All builds
-    Flight::route('/api', function(){
+    Flight::route('/', function(){
         $ret = array(
             'id' => null,
             'result' => array(),
