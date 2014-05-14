@@ -26,12 +26,13 @@
         private $list = array();
 
         public function __construct($channels, $physicalPath, $device) {
-            if (in_array('stable', $channels)) {
-                $stableDir = $physicalPath . '/stable';
-                $this->add($stableDir, $device, 'stable');
+            if (in_array('release', $channels)) {
+                $releaseDir = $physicalPath . '/RELEASE';
+                $this->add($releaseDir, $device, 'release');
             }
             if (in_array('nightly', $channels)) {
-                $this->add($physicalPath, $device, 'nightly');
+                $nightlyDir = $physicalPath . '/NIGHTLY';
+                $this->add($nightlyDir, $device, 'nightly');
             }
             usort($this->list, function($a,$b){ /*Reverse order (b-a)*/ return $b->timestamp - $a->timestamp; });
         }
