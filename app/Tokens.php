@@ -51,7 +51,7 @@
             $cache = $mc->get($filePath);
             if (!$cache && Memcached::RES_NOTFOUND == $mc->getResultCode()) {
                 $buildpropArray = explode("\n", file_get_contents('zip://'.$filePath.'#system/build.prop'));
-                if ($device == $this->getBuildPropValue($buildpropArray, 'ro.liquid.device')) {
+                if ($device == $this->getBuildPropValue($buildpropArray, 'ro.tg.device')) {
                     $api_level = $this->getBuildPropValue($buildpropArray, 'ro.build.version.sdk');
                     $incremental = $this->getBuildPropValue($buildpropArray, 'ro.build.version.incremental');
                     $timestamp = $this->getBuildPropValue($buildpropArray, 'ro.build.date.utc');
