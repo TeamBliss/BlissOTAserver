@@ -39,7 +39,7 @@
         public static function getUrl($fileName, $device, $isDelta, $channel) {
             $dldir = $isDelta ? '_deltas' : '_builds';
             $channelDir = ($channel == 'release') ? 'RELEASE/' : 'NIGHTLY/';
-            return 'http://' . 'www.drdevs.com/devs/teamliquid/ota' . '/' . $dldir . '/' . $device . '/' . $channelDir . $fileName;
+            return 'http://' . 'http://teambliss.x10host.com/BlissStalk/Devices/' . '/' . $dldir . '/' . $device . '/' . $channelDir . $fileName;
         }
 
         public static function getMD5($file) {
